@@ -4,9 +4,9 @@ package com.gridnine.testing;
 import com.gridnine.testing.factory.FlightBuilder;
 import com.gridnine.testing.filter.FlightFilterImpl;
 import com.gridnine.testing.model.Flight;
-import com.gridnine.testing.predicate.flightpredicates.ArrivalTimeAfterDepartureTime;
-import com.gridnine.testing.predicate.flightpredicates.DepartureTimeAfterCurrentTime;
-import com.gridnine.testing.predicate.flightpredicates.TotalTimeOnTheGroundLessThanMaxTime;
+import com.gridnine.testing.predicate.flightpredicate.ArrivalTimeAfterDepartureTime;
+import com.gridnine.testing.predicate.flightpredicate.DepartureTimeAfterCurrentTime;
+import com.gridnine.testing.predicate.flightpredicate.TotalTimeOnTheGroundLessThanMaxTime;
 
 import java.util.List;
 
@@ -17,9 +17,9 @@ public class Main {
         ArrivalTimeAfterDepartureTime arrivalTimeAfterDepartureTimePredicate = new ArrivalTimeAfterDepartureTime();
         DepartureTimeAfterCurrentTime departureTimeAfterCurrentTimePredicate = new DepartureTimeAfterCurrentTime();
         TotalTimeOnTheGroundLessThanMaxTime totalTimeOnTheGroundLessThanMaxTimePredicate =
-                new TotalTimeOnTheGroundLessThanMaxTime(2l);
+                new TotalTimeOnTheGroundLessThanMaxTime(2L);
 
-      /*  System.out.println("Original test set of flight list");
+/*        System.out.println("Original test set of flight list");
         System.out.println(flightsList);
 
         System.out.println("Removing flights which contain segments with departure time " +
@@ -38,7 +38,7 @@ public class Main {
                 flightFilter.filter(flightsList, totalTimeOnTheGroundLessThanMaxTimePredicate);
         System.out.println(flightsListAfterTotalTimeOnTheGroundLessThanMaxTimePredicate);
 
-        //We also can use many rules (predicates) together for instance
+        //We also can use rules (predicates) together for instance
        /* flightsList = flightFilter.test(flightsList, arriveTimeAfterDepartureTimePredicate,
                 departureTimeAfterCurrentTimePredicate,
                 totalTimeOnTheGroundLessThanMaxTime);*/
